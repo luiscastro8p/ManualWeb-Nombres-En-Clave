@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset=utf-8>
+    <script>
+        window.NREUM || (NREUM = {}), NREUM.info = {
+            beacon: "bam.nr-data.net",
+            errorBeacon: "bam.nr-data.net",
+            licenseKey: "2315e0b361",
+            applicationID: "9961421",
+            transactionName: "dVwNRxYMCFtVS01CQllXFlAQTAZYX00RRkJXQzxHDAYJUkM=",
+            queueTime: 2,
+            applicationTime: 95,
+            agent: ""
+        };
+    </script>
+    <script>
+        window.NREUM || (NREUM = {}), __nr_require = function(n, r, e) {
+            function o(t) {
+                if (!r[t]) {
+                    var e = r[t] = {
+                        exports: {}
+                    };
+                    n[t][0].call(e.exports, function(e) {
+                        return o(n[t][1][e] || e)
+                    }, e, e.exports)
+                }
+                return r[t].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var t = 0; t < e.length; t++) o(e[t]);
+            return o
+        }({
+            1: [function(e, t) {
+                function n() {}
+
+                function r(e, t, n) {
+                    return function() {
+                        return i(e, [f.now()].concat(a(arguments)), t ? null : this, n), t ? void 0 : this
+                    }
+                }
+                var i = e("handle"),
+                    o = e(3),
+                    a = e(4),
+                    u = e("ee").get("tracer"),
+                    f = e("loader"),
+                    c = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = c);
+                var s = "api-",
+                    l = s + "ixn-";
+                o(["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"], function(e, t) {
+                    c[t] = r(s + t, !0, "api")
+                }), c.addPageAction = r(s + "addPageAction", !0), c.setCurrentRouteName = r(s + "routeName", !0), t.exports = newrelic, c.interaction = function() {
+                    return (new n).get()
+                };
+                var p = n.prototype = {
+                    createTracer: function(e, t) {
+                        var n = {},
+                            r = this,
+                            o = "function" == typeof t;
+                        return i(l + "tracer", [f.now(), e, n], r),
+                            function() {
+                                if (u.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try {
+                                    return t.apply(this, arguments)
+                                } catch (e) {
+                                    throw u.emit("fn-err", [arguments, this, e], n), e
+                                } finally {
+                                    u.emit("fn-end", [f.now()], n)
+                                }
+                            }
+                    }
+                };
+                o("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, t) {
+                    p[t] = r(l + t)
+                }), newrelic.noticeError = function(e, t) {
+                    "string" == typeof e && (e = new Error(e)), i("err", [e, f.now(), !1, t])
+                }
+            }, {}],
+            2: [function(e, t) {
+                function n(e, t) {
+                    if (!i) return !1;
+                    if (e !== i) return !1;
+                    if (!t) return !0;
+                    if (!a) return !1;
+                    for (var n = a.split("."), r = t.split("."), o = 0; o < r.length; o++)
+                        if (r[o] !== n[o]) return !1;
+                    return !0
+                }
+                var i = null,
+                    a = null,
+                    r = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                    var o = navigator.userAgent,
+                        u = o.match(r);
+                    u && -1 === o.indexOf("Chrome") && -1 === o.indexOf("Chromium") && (i = "Safari", a = u[1])
+                }
+                t.exports = {
+                    agent: i,
+                    version: a,
+                    match: n
+                }
+            }, {}],
+            3: [function(e, t) {
+                function n(e, t) {
+                    var n = [],
+                        r = "",
+                        o = 0;
+                    for (r in e) i.call(e, r) && (n[o] = t(r, e[r]), o += 1);
+                    return n
+                }
+                var i = Object.prototype.hasOwnProperty;
+                t.exports = n
+            }, {}],
+            4: [function(e, t) {
+                function n(e, t, n) {
+                    t || (t = 0), void 0 === n && (n = e ? e.length : 0);
+                    for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[t + r];
+                    return i
+                }
+                t.exports = n
+            }, {}],
+            5: [function(e, t) {
+                t.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function(e, t) {
+                function a() {}
+
+                function u(c) {
+                    function s(e) {
+                        return e && e instanceof a ? e : e ? g(e, v, f) : f()
+                    }
+
+                    function t(e, t, n, r) {
+                        if (!b.aborted || r) {
+                            c && c(e, t, n);
+                            for (var o = s(n), i = l(e), a = i.length, u = 0; u < a; u++) i[u].apply(o, t);
+                            var f = h[p[e]];
+                            return f && f.push([d, e, t, o]), o
+                        }
+                    }
+
+                    function e(e, t) {
+                        i[e] = l(e).concat(t)
+                    }
+
+                    function n(e, t) {
+                        var n = i[e];
+                        if (n)
+                            for (var r = 0; r < n.length; r++) n[r] === t && n.splice(r, 1)
+                    }
+
+                    function l(e) {
+                        return i[e] || []
+                    }
+
+                    function r(e) {
+                        return y[e] = y[e] || u(t)
+                    }
+
+                    function o(e, n) {
+                        w(e, function(e, t) {
+                            n = n || "feature", (p[t] = n) in h || (h[n] = [])
+                        })
+                    }
+                    var i = {},
+                        p = {},
+                        d = {
+                            on: e,
+                            addEventListener: e,
+                            removeEventListener: n,
+                            emit: t,
+                            get: r,
+                            listeners: l,
+                            context: s,
+                            buffer: o,
+                            abort: m,
+                            aborted: !1
+                        };
+                    return d
+                }
+
+                function f() {
+                    return new a
+                }
+
+                function m() {
+                    (h.api || h.feature) && (b.aborted = !0, h = b.backlog = {})
+                }
+                var v = "nr@context",
+                    g = e("gos"),
+                    w = e(3),
+                    h = {},
+                    y = {},
+                    b = t.exports = u();
+                b.backlog = h
+            }, {}],
+            gos: [function(e, t) {
+                function n(e, t, n) {
+                    if (i.call(e, t)) return e[t];
+                    var r = n();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, t, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (o) {}
+                    return e[t] = r
+                }
+                var i = Object.prototype.hasOwnProperty;
+                t.exports = n
+            }, {}],
+            handle: [function(e, t) {
+                function n(e, t, n, r) {
+                    o.buffer([e], r), o.emit(e, t, n)
+                }
+                var o = e("ee").get("handle");
+                (t.exports = n).ee = o
+            }, {}],
+            id: [function(e, t) {
+                function n(e) {
+                    var t = typeof e;
+                    return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : i(e, o, function() {
+                        return r++
+                    })
+                }
+                var r = 1,
+                    o = "nr@id",
+                    i = e("gos");
+                t.exports = n
+            }, {}],
+            loader: [function(e, t) {
+                function n() {
+                    if (!x++) {
+                        var n = b.info = NREUM.info,
+                            e = p.getElementsByTagName("script")[0];
+                        if (setTimeout(c.abort, 3e4), !(n && n.licenseKey && n.applicationID && e)) return c.abort();
+                        f(h, function(e, t) {
+                            n[e] || (n[e] = t)
+                        }), u("mark", ["onload", i() + b.offset], null, "api");
+                        var t = p.createElement("script");
+                        t.src = "https://" + n.agent, e.parentNode.insertBefore(t, e)
+                    }
+                }
+
+                function r() {
+                    "complete" === p.readyState && o()
+                }
+
+                function o() {
+                    u("mark", ["domContent", i() + b.offset], null, "api")
+                }
+
+                function i() {
+                    return E.exists && performance.now ? Math.round(performance.now()) : (a = Math.max((new Date).getTime(), a)) - b.offset
+                }
+                var a = (new Date).getTime(),
+                    u = e("handle"),
+                    f = e(3),
+                    c = e("ee"),
+                    s = e(2),
+                    l = window,
+                    p = l.document,
+                    d = "addEventListener",
+                    m = "attachEvent",
+                    v = l.XMLHttpRequest,
+                    g = v && v.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: l.setImmediate,
+                    CT: clearTimeout,
+                    XHR: v,
+                    REQ: l.Request,
+                    EV: l.Event,
+                    PR: l.Promise,
+                    MO: l.MutationObserver
+                };
+                var w = "" + location,
+                    h = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1118.min.js"
+                    },
+                    y = v && g && g[d] && !/CriOS/.test(navigator.userAgent),
+                    b = t.exports = {
+                        offset: a,
+                        now: i,
+                        origin: w,
+                        features: {},
+                        xhrWrappable: y,
+                        userAgent: s
+                    };
+                e(1), p[d] ? (p[d]("DOMContentLoaded", o, !1), l[d]("load", n, !1)) : (p[m]("onreadystatechange", r), l[m]("onload", n)), u("mark", ["firstbyte", a], null, "api");
+                var x = 0,
+                    E = e(5)
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name=viewport />
+    <meta name=viewport content="width=device-width" />
+    <meta name="p:domain_verify" content=96e683d0045e44dfac2deaec70e57185 />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-239aa284801fb5629683f051242d546de2386981abd5b5208b3edcf8a5d06d8c.ico" />
+    <link rel=apple-touch-icon sizes=76x76 href="/assets/apple-touch-icon-precomposed-8f3c48df0d37cb6feb6c3e0894af66053afc8a2a6711c4742c46ac4a8cad84ff.png">
+    <link rel=canonical href="https://www.creative-tim.com/bootstrap-themes" data-turbolinks-track=false itemprop=url />
+    <link rel=next href="https://www.creative-tim.com/bootstrap-themes?page=2" />
+    <title itemprop=name> 90 + Best Bootstrap Themes and Templates: Download @ Creative Tim </title>
+    <meta name=description content="Download the best Bootstrap Themes and Templates developed by Creative Tim. Join over 110.000 creatives that already love our bootstrap resources!">
+    <meta name=keywords content="creativetim, creative tim, bootstrap, theme, freebies, bootstrap kit, bootstrap template, free items, beautiful ui">
+    <meta name=data-turbolinks-track content=false>
+    <link rel=stylesheet media=all href="/assets/application-0abb1e8e08ecb9077cc8c3b9493ab7f2f83ce9dbebddf6da1e261a9ad4c1a841.css" data-turbolinks-track=reload />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel=stylesheet>
+    <meta name=csrf-param content=authenticity_token />
+    <meta name=csrf-token content="5e5R1w9oI6ic9nqa6aRQekqJme3qxbo5g6r3qXnu1kD7HcC7dqDYCqYuUJm7cfGMkLNcjjhFZ6jKVNTt3D/IJg==" />
+    <script src="/assets/application-84da0db373422ee24af06bf60a0ebe60983d104a987a678a3515947d23a8575a.js" data-turbolinks-track=reload></script>
+    <script>
+        ! function(e, o, r, c, a, t, l) {
+            e.GoogleAnalyticsObject = a, e[a] = e[a] || function() {
+                (e[a].q = e[a].q || []).push(arguments)
+            }, e[a].l = 1 * new Date, t = o.createElement(r), l = o.getElementsByTagName(r)[0], t.async = 1, t.src = c, l.parentNode.insertBefore(t, l)
+        }(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+        try {
+            ga("create", "UA-46172202-1", "auto", {
+                allowLinker: !0
+            })
+        } catch (e) {
+            console.log("Google error")
+        }
+        try {
+            ga("require", "linker")
+        } catch (e) {
+            console.log("Google error")
+        }
+        try {
+            ga("require", "ecommerce")
+        } catch (e) {
+            console.log("Google error")
+        }
+        try {
+            ga("linker:autoLink", ["creative-tim.com", "avangate.com"])
+        } catch (e) {
+            console.log("Google error")
+        }
+        try {
+            ga("send", "pageview")
+        } catch (e) {
+            console.log("Google error")
+        }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-880998111"></script>
+    <script>
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "AW-880998111");
+    </script>
+    <script>
+        ! function(e, t, n, o, c, r, a) {
+            e.fbq || (c = e.fbq = function() {
+                c.callMethod ? c.callMethod.apply(c, arguments) : c.queue.push(arguments)
+            }, e._fbq || (e._fbq = c), (c.push = c).loaded = !0, c.version = "2.0", c.queue = [], (r = t.createElement(n)).async = !0, r.src = o, (a = t.getElementsByTagName(n)[0]).parentNode.insertBefore(r, a))
+        }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+        try {
+            fbq("init", "111649226022273"), fbq("track", "PageView")
+        } catch (err) {
+            console.log("Facebook Track Error:", err)
+        }
+    </script> <noscript><img height=1 width=1 style="display:none" src="https://www.facebook.com/tr?id=111649226022273&ev=PageView&noscript=1"/></noscript>
+    <script>
+        ! function(t, h, e, j, n, s) {
+            t.hj = t.hj || function() {
+                (t.hj.q = t.hj.q || []).push(arguments)
+            }, t._hjSettings = {
+                hjid: 99526,
+                hjsv: 5
+            }, n = h.getElementsByTagName("head")[0], (s = h.createElement("script")).async = 1, s.src = e + t._hjSettings.hjid + j + t._hjSettings.hjsv, n.appendChild(s)
+        }(window, document, "https://static.hotjar.com/c/hotjar-99526.js?");
+    </script>
+</head>
+
+<body>
+    <nav class="navbar filter-bar navbar-fixed-top navbar-transparent">
+        <div class=container>
+            <div class=notification>
+                <div id=notif-message class=notif-message style="display: none;" notice-type=success> </div>
+            </div>
+            <div class=navbar-header> <button type=button class=navbar-toggle data-toggle=collapse data-target=".navbar-ex1-collapse"> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button>
+                <div data-turbolinks=false>
+                    <a href="/" class=navbar-brand>
+                        <div class=logo> <img src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" width=60 height=60 /> </div>
+                        <p>Creative <br> Tim</p>
+                    </a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right" data-turbolinks=false>
+                    <li class="dropdown dropdown-categories" data-turbolinks=false>
+                        <a href="" class=dropdown-toggle data-toggle=dropdown> <i class="icon-th-large icon-2x"></i>
+                            <p> Categories <span class=caret></span> </p>
+                        </a>
+                        <ul class=dropdown-menu>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes"> All Categories </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/admin-dashboard"> Admin &amp; Dashboards </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/ui-kit"> UI Kits </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/free"> Free Themes </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/premium"> Premium Themes </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/angular-themes"> Angular Themes </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/react-themes"> React Themes </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/vuejs-themes"> Vue Themes </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/angular-dashboard"> Angular Dashboards </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/landing-page"> Landing Pages </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/e-commerce"> E-commerce </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/one-page-template"> One Page Templates </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/wizard"> Wizards </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/calendar"> Calendar </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/login-form"> Login Forms </a> </li>
+                            <li data-turbolinks=false> <a href="/bootstrap-themes/components"> Components </a> </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-categories" data-turbolinks=false>
+                        <a href="" class=dropdown-toggle data-toggle=dropdown> <i class="icon-wrench icon-2x"></i>
+                            <p> Tools <span class=caret></span> </p>
+                        </a>
+                        <ul class=dropdown-menu>
+                            <li data-turbolinks=false> <a href="/tools"> Third-Party Tools </a> </li>
+                            <li data-turbolinks=false> <a href="/ira-design"> Illustrations </a> </li>
+                        </ul>
+                    </li>
+                    <li class="big-bundle dropdown-categories" data-turbolinks=false>
+                        <a href="/bundles"> <i class="icon-gift icon-2x"></i>
+                            <p> Bundles </p> <span class="notification-bubble notification-inverted">New</span> </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com"> <i class="icon-align-left icon-2x"></i>
+                            <p>Blog</p>
+                        </a>
+                    </li>
+                    <li data-turbolinks=false>
+                        <a href="javascript:void(0)" onclick="openLoginModal();" role=button data-toggle=modal> <i class="icon-male-sign-alt icon-2x"></i>
+                            <p>Login/Register</p>
+                        </a>
+                    </li>
+                    <li class=noty-cart data-turbolinks=false>
+                        <a href="#" data-toggle=modal data-target="#product-cart-modal"> <i class="icon-shopping-cart icon-2x"></i> <span class="notification-bubble hidden" id=products-in-cart> 0 </span>
+                            <p>Your Cart </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade login" id=loginModal>
+        <div class="modal-dialog login animated">
+            <div class=modal-content>
+                <div class=modal-header> <button type=button class=close data-dismiss=modal aria-hidden=true>&times;</button>
+                    <h4 class=modal-title>Login with</h4>
+                </div>
+                <div class=modal-body>
+                    <div class=box>
+                        <div class=content>
+                            <div class=social data-turbolinks=false>
+                                <a id=github_login class="circle github" href="/social/github?destination=dashboard&amp;subscribed=1&amp;url=https%253A%252F%252Fwww.creative-tim.com%252Fbootstrap-themes"> <i class=icon-github></i> </a>
+                                <a id=google_login class="circle google" href="/social/google_oauth2?destination=dashboard&amp;subscribed=1&amp;url=https%253A%252F%252Fwww.creative-tim.com%252Fbootstrap-themes"> <i class=icon-google-plus-alt></i> </a>
+                                <a id=facebook_login class="circle facebook" href="/social/facebook?destination=dashboard&amp;subscribed=1&amp;url=https%253A%252F%252Fwww.creative-tim.com%252Fbootstrap-themes">
+                                <i class=icon-facebook-alt></i> </a>
+                            </div>
+                            <div class=division>
+                                <div class="line l"></div> <span>or</span>
+                                <div class="line r"></div>
+                            </div>
+                            <div class="error inside-alert"></div>
+                            <div class="form loginBox">
+                                <form html="{:multipart=&gt;true}" action="/login" accept-charset=UTF-8 data-remote=true method=post><input name=utf8 type=hidden value="&#x2713;" /> <input name=email class=form-control placeholder=Email /> <input type=password name=password class=form-control placeholder=Password /> <input type=hidden name=destination
+                                        value=dashboard /> <input type=hidden name=url value="https%3A%2F%2Fwww.creative-tim.com%2Fbootstrap-themes" /> <input type=submit name=commit value=Login class="btn btn-default btn-login" data-disable-with=Login />                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=box>
+                        <div class="content registerBox" style="display:none;">
+                            <div class=form>
+                                <form html="{:multipart=&gt;true}" action="/register" accept-charset=UTF-8 data-remote=true method=post><input name=utf8 type=hidden value="&#x2713;" /> <input name=email class=form-control placeholder=Email /> <input type=password name=password class=form-control placeholder=Password /> <input type=password name=password_confirmation
+                                        class=form-control placeholder="Repeat Password" /> <input type=hidden name=destination value=dashboard /> <input type=hidden name=url value="https%3A%2F%2Fwww.creative-tim.com%2Fbootstrap-themes" /> <input type=submit
+                                        name=commit value="Create account" class="btn btn-default btn-register" data-disable-with="Create account" /> <label class=checkbox> <input type=checkbox value=1 data-toggle=checkbox name=subscribed class="ct-info checkbox-subscribe" checked> Subscribe me to the Newsletter </label>                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=modal-footer>
+                    <div class="forgot login-footer"> <span>Looking to <a href="javascript: showRegisterForm();">create an account</a> ?</span> <br/> <span><a href="/forgot-password">Forgot password</a> ?</span> </div>
+                    <div class="forgot register-footer" style="display:none"> <span>Already have an account?</span> <a href="javascript: showLoginForm();">Login</a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade cart-modal cart-modal-one-product" id=product-cart-modal role=dialog>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class=empty-cart-message> <i class="icon-shopping-cart icon-2x"></i>
+                    <h4>Your cart is currently empty.</h4>
+                </div>
+                <div class=text-center> <a href="/bootstrap-themes/premium#from-empty-shopping-cart" class="btn btn-info btn-new btn-fill btn-wd"> Start Shopping </a> </div>
+                <script>
+                    $(".makeLoading, .make-loading").click(function() {
+                        $(this).html('<i class="fa fa-circle-o-notch fa-spin"></i> Loading...').addClass("disabled")
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <script>
+        var products_ids = [];
+        products_ids.push("143"), products_ids.push("145"), products_ids.push("46"), products_ids.push("146"), products_ids.push("139"), products_ids.push("138"), products_ids.push("137");
+        try {
+            fbq("track", "ViewCategory", {
+                content_name: "Bootstrap Themes",
+                content_category: "Software > Computer Software > Multimedia & Design Software > Web Design Software",
+                content_ids: products_ids,
+                content_type: "product"
+            })
+        } catch (err) {
+            console.log("Facebook Track Error:", err)
+        }
+    </script>
+    <div class="section section-header section-all-products">
+        <div class="parallax-background parallax-active"> <img src="/assets/gallery-b03526653f044accfb6520f0a147d43cd343140e1caad81540563e8a556ae6ea.jpg" />
+            <div class="filter filter-black"></div>
+        </div>
+        <div class=info>
+            <h1>Bootstrap Themes </h1>
+            <p> Download the best Bootstrap Themes & Templates developed by Creative Tim. <br/>Join over 677,840 creatives that already love our bootstrap resources! </p>
+            <div itemscope itemtype="http://schema.org/WebSite" class=navbar-search-form>
+                <meta itemprop=url content="https://www.creative-tim.com/" />
+                <form class="" itemprop=potentialAction itemscope=itemscope itemtype="http://schema.org/SearchAction" action="/search" accept-charset=UTF-8 method=get><input name=utf8 type=hidden value="&#x2713;" />
+                    <div class="form-group form-search">
+                        <meta itemprop=target content="https://www.creative-tim.com/search?q={q}" /> <input name=q id=q class="form-control form-control-search" placeholder="Search here..." itemprop=query-input /> <button type=submit name=button class="btn btn-default btn-round btn-submit"> <i class="icon-search icon-2x"></i> </button>                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="main ">
+        <div class=no-child-div>
+            <div class=container data-turbolinks=false>
+                <ul class=categories-list>
+                    <li>
+                        <a href="/"> <span>Latest</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/admin-dashboard"> <span>Admin &amp; Dashboards</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/ui-kit"> <span>UI Kits</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/free"> <span>Free Themes</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/premium"> <span>Premium Themes</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/angular-themes"> <span>Angular Themes</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/react-themes"> <span>React Themes</span> </a>
+                    </li>
+                    <li>
+                        <a href="/bootstrap-themes/vuejs-themes"> <span>Vue Themes</span> </a>
+                    </li>
+                    <li class=dropdown data-turbolinks=false> <a href="" class=dropdown-toggle data-toggle=dropdown> More <span class=caret></span> </a>
+                        <ul class=dropdown-menu>
+                            <li class=active>
+                                <a href="/bootstrap-themes"> <span>All Categories</span> </a>
+                            </li>
+                            <li> <a href="/bootstrap-themes/angular-dashboard"> Angular Dashboards </a> </li>
+                            <li> <a href="/bootstrap-themes/landing-page"> Landing Pages </a> </li>
+                            <li> <a href="/bootstrap-themes/e-commerce"> E-commerce </a> </li>
+                            <li> <a href="/bootstrap-themes/one-page-template"> One Page Templates </a> </li>
+                            <li> <a href="/bootstrap-themes/wizard"> Wizards </a> </li>
+                            <li> <a href="/bootstrap-themes/calendar"> Calendar </a> </li>
+                            <li> <a href="/bootstrap-themes/login-form"> Login Forms </a> </li>
+                            <li> <a href="/bootstrap-themes/components"> Components </a> </li>
+                        </ul>
+                    </li>
+                    <div class=clearfix></div>
+                </ul>
+            </div>
+        </div>
+        <div class=container>
+            <div class=row id=mix-container>
+                <div class="col-md-10 col-md-offset-1">
+                    <div class=landing-title>
+                        <h2 class=title>Bootstrap Templates</h2>
+                        <div class=filters>
+                            <fieldset class=btn-prices>
+                                <h6>Sort Themes:</h6>
+                                <div class="dropdown pull-right"> <button class="filter btn btn-default btn-round" type=button data-toggle=dropdown> Default <span class=caret></span> </button>
+                                    <ul class=dropdown-menu>
+                                        <li><a href="/bootstrap-themes?direction=asc&amp;sort=product_order">Default</a></li>
+                                        <li><a href="/bootstrap-themes?direction=desc&amp;sort=created_at">Newest Items</a></li>
+                                        <li><a href="/bootstrap-themes?direction=asc&amp;sort=price">Price: low to high</a></li>
+                                        <li><a href="/bootstrap-themes?direction=desc&amp;sort=price">Price: high to low</a></li>
+                                        <li><a href="/bootstrap-themes?direction=desc&amp;sort=number_of_downloads">Most Downloaded</a></li>
+                                    </ul>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class=clearfix></div>
+                    </div>
+                </div>
+                <div class=row>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-02-06 10:01:05 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/144/thumb/opt_mkrn_thumbnail.jpg?1549467773" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/144/original/opt_mkrn_thumbnail.jpg?1549467773"
+                                        alt="No Image" />
+                                    <a href="/product/material-kit-react-native" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 1,644</b> <b class=comments-icon><i class="fa fa-comment"></i> 12</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/material-kit-react-native" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/material-kit-react-native" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/material-kit-react-native">
+                                        <h3>Material Kit React Native
+                                            <div class="time pull-right "> Free </div>
+                                        </h3>
+                                        <p>Free React Native App Template </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-02-04 12:06:32 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/143/thumb/opt_mkprn_thumbnail.jpg?1549302564" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/143/original/opt_mkprn_thumbnail.jpg?1549302564"
+                                        alt="No Image" />
+                                    <a href="/product/material-kit-pro-react-native" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 20</b> <b class=comments-icon><i class="fa fa-comment"></i> 2</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/material-kit-pro-react-native" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/material-kit-pro-react-native/" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/material-kit-pro-react-native"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/material-kit-pro-react-native">
+                                        <h3>Material Kit PRO React Native
+                                            <div class="time pull-right premium-product "> $149 </div>
+                                        </h3>
+                                        <p>Premium React Native App Template </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-01-31 09:49:20 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/141/thumb/opt_mailto_thumbnail.jpg?1549272579" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/141/original/opt_mailto_thumbnail.jpg?1549272579"
+                                        alt="No Image" />
+                                    <a href="/product/mailto-free" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 1,050</b> <b class=comments-icon><i class="fa fa-comment"></i> 5</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/mailto-free" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/mailto-free/index.html" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/mailto-free">
+                                        <h3>Mailto Free
+                                            <div class="time pull-right "> Free </div>
+                                        </h3>
+                                        <p>Free Responsive Email Templates </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-02-08 10:53:31 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/145/thumb/opt_nudp_angular_thumbnail.jpg?1551358167" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/145/original/opt_nudp_angular_thumbnail.jpg?1551358167"
+                                        alt="No Image" />
+                                    <a href="/product/now-ui-dashboard-pro-angular" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 18</b> <b class=comments-icon><i class="fa fa-comment"></i> 7</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/now-ui-dashboard-pro-angular" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/now-ui-dashboard-pro-angular/dashboard" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/now-ui-dashboard-pro-angular"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/now-ui-dashboard-pro-angular">
+                                        <h3>Now UI Dashboard PRO Angular <span class="label label-success"><i class="fa fa-bolt"></i> New</span>
+                                            <div class="time pull-right premium-product "> $59 </div>
+                                        </h3>
+                                        <p>Premium Bootstrap 4 Angular 7 Admin Template </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2016-06-15 09:52:53 -0500 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/46/thumb/opt_mkp_thumbnail.jpg?1515776562" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/46/original/opt_mkp_thumbnail.jpg?1515776562" alt="No Image"
+                                    />
+                                    <a href="/product/material-kit-pro" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 2,831</b> <b class=comments-icon><i class="fa fa-comment"></i> 152</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/material-kit-pro" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/material-kit-pro/presentation.html" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/material-kit-pro"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/material-kit-pro">
+                                        <h3>Material Kit Pro
+                                            <div class="time pull-right premium-product "> $79 </div>
+                                        </h3>
+                                        <p>Premium Bootstrap 4 UI Kit </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-02-22 09:52:20 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/146/thumb/opt_adp_laravel_thumbnail.jpg?1550851795" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/146/original/opt_adp_laravel_thumbnail.jpg?1550851795"
+                                        alt="No Image" />
+                                    <a href="/product/argon-dashboard-pro-laravel" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 7</b> <b class=comments-icon><i class="fa fa-comment"></i> 11</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/argon-dashboard-pro-laravel" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="http://argon-dashboard-pro-laravel.creative-tim.com/" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/argon-dashboard-pro-laravel"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/argon-dashboard-pro-laravel">
+                                        <h3>Argon Dashboard Pro Laravel <span class="label label-success"><i class="fa fa-bolt"></i> New</span>
+                                            <div class="time pull-right premium-product "> $149 </div>
+                                        </h3>
+                                        <p>Premium Frontend Preset for Laravel </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-01-24 06:57:52 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/140/thumb/opt_ad_laravel_thumbnail.jpg?1548334671" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/140/original/opt_ad_laravel_thumbnail.jpg?1548334671"
+                                        alt="No Image" />
+                                    <a href="/product/argon-dashboard-laravel" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 3,103</b> <b class=comments-icon><i class="fa fa-comment"></i> 18</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/argon-dashboard-laravel" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://argon-dashboard-laravel.creative-tim.com" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/argon-dashboard-laravel">
+                                        <h3>Argon Dashboard Laravel
+                                            <div class="time pull-right "> Free </div>
+                                        </h3>
+                                        <p>Free Frontend Preset for Laravel </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-01-17 07:41:47 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/139/thumb/opt_mkp_vue_thumbnail.jpg?1547651786" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/139/original/opt_mkp_vue_thumbnail.jpg?1547651786"
+                                        alt="No Image" />
+                                    <a href="/product/vue-material-kit-pro" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 27</b> <b class=comments-icon><i class="fa fa-comment"></i> 6</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/vue-material-kit-pro" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/vue-material-kit-pro" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/vue-material-kit-pro"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/vue-material-kit-pro">
+                                        <h3>Vue Material Kit PRO
+                                            <div class="time pull-right premium-product "> $89 </div>
+                                        </h3>
+                                        <p>Premium VueJS UI Kit </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2019-01-14 05:05:40 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/138/thumb/opt_bdp_thumbnail.jpg?1547454513" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/138/original/opt_bdp_thumbnail.jpg?1547454513"
+                                        alt="No Image" />
+                                    <a href="/product/black-dashboard-pro-react" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 71</b> <b class=comments-icon><i class="fa fa-comment"></i> 23</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/black-dashboard-pro-react" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/black-dashboard-pro-react/#/admin/dashboard" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/black-dashboard-pro-react"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/black-dashboard-pro-react">
+                                        <h3>Black Dashboard PRO React <span class="label label-danger"><i class="fa fa-fire"></i> Trending</span>
+                                            <div class="time pull-right premium-product "> $59 </div>
+                                        </h3>
+                                        <p>Premium Reactstrap (Bootstrap 4) Admin Template </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 " data-my-order="2018-12-12 07:49:45 -0600 ">
+                            <div class=card data-turbolinks=false>
+                                <div class=thumbnail> <img src="https://s3.amazonaws.com/creativetim_bucket/products/137/thumb/opt_adp_thumbnail.jpg?1544778965" data-retina="https://s3.amazonaws.com/creativetim_bucket/products/137/original/opt_adp_thumbnail.jpg?1544778965"
+                                        alt="No Image" />
+                                    <a href="/product/argon-dashboard-pro" class=thumb-cover></a>
+                                    <div class=details>
+                                        <div class=numbers> <b class=downloads><i class="fa fa-arrow-circle-o-down"></i> 161</b> <b class=comments-icon><i class="fa fa-comment"></i> 44</b> </div>
+                                        <div class=clearfix></div>
+                                    </div> <b class=actions> <a href="/product/argon-dashboard-pro" class="btn btn-neutral btn-round btn-fill" rel=tooltip title="More Details"> <i class="fa fa-align-left"></i> </a> <a href="https://demos.creative-tim.com/argon-dashboard-pro" class="btn btn-neutral btn-fill btn-round" target=_blank title="Live Preview" rel=tooltip> <i class="fa fa-laptop"></i> </a> <a class="btn btn-info btn-round btn-fill" rel=tooltip title="Add to Cart" data-source=product-card data-remote=true href="/add-product-in-cart/argon-dashboard-pro"> <i class="fa fa-shopping-cart"></i> </a> </b>                                    </div>
+                                <div class=card-info>
+                                    <a href="/product/argon-dashboard-pro">
+                                        <h3>Argon Dashboard PRO <span class="label label-danger"><i class="fa fa-fire"></i> Trending</span>
+                                            <div class="time pull-right premium-product "> $79 </div>
+                                        </h3>
+                                        <p>Premium Bootstrap 4 Admin Template </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <input type=hidden name=direction id=direction /> <input type=hidden name=sort id=sort />
+                <div class="col-md-6 col-md-offset-3 text-center" data-turbolinks=false>
+                    <div class="pagination pagination-azure pagination-no-border " is_active=true><span class="previous_page disabled">«</span> <em class=current>1</em> <a rel=next href="/bootstrap-themes?page=2">2</a> <a href="/bootstrap-themes?page=3">3</a> <a href="/bootstrap-themes?page=4">4</a> <a href="/bootstrap-themes?page=5">5</a>                        <a href="/bootstrap-themes?page=6">6</a> <a href="/bootstrap-themes?page=7">7</a> <a href="/bootstrap-themes?page=8">8</a> <a href="/bootstrap-themes?page=9">9</a> <a class=next_page rel=next href="/bootstrap-themes?page=2">»</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=main-white>
+        <div class=container>
+            <div class=breadcrumbs-container>
+                <ol itemscope itemtype="http://schema.org/BreadcrumbList" class=breadcrumb>
+                    <li itemprop=itemListElement itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop=item href="https://www.creative-tim.com/"> <span itemprop=name>Home</span> </a>
+                        <meta itemprop=position content=1 /> </li>
+                    <li itemprop=itemListElement itemscope itemtype="http://schema.org/ListItem" class=&quot;active&quot;&gt;> <span itemprop=name>All Categories</span>
+                        <meta itemprop=position content=2 /> </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id=live-preview tabindex=-1 role=dialog aria-labelledby=myModalLabel aria-hidden=true>
+        <div class=modal-dialog>
+            <div class=modal-content>
+                <div class="modal-header text-center"> <button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>&times;</span></button>
+                    <div class=row>
+                        <div class=col-md-5> <a href="" class="btn btn-info btn-fill pull-left" id=src-for-tim type=button> Start with this design </a> <a href="" class="btn btn-default btn-simple pull-left" id=src-for-live target=_blank> View original url </a> </div>
+                    </div>
+                </div>
+                <div class=modal-body> </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-title ">
+        <div class=container>
+            <div class=row>
+                <div class=col-sm-8>
+                    <h1 class=title>Join our newsletter and receive weekly news!</h1>
+                </div>
+                <form html="{:multipart=&gt;true}" class=form-inline action="/newsletter" accept-charset=UTF-8 data-remote=true method=post><input name=utf8 type=hidden value="&#x2713;" />
+                    <div class="col-sm-6 col-md-2"> <input type=email name=subscribe_email id=subscribe_email class=form-control placeholder="Enter Email" required=required /> </div>
+                    <div class="col-sm-6 col-md-2"> <input type=submit name=commit value="Sign Up" class="btn btn-info btn-round btn-fill btn-block" data-disable-with="Sign Up" /> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class=footer>
+        <div class=overlayer>
+            <div class=container>
+                <div class="row support">
+                    <div class="col-sm-3 col-xs-4">
+                        <h4>Creative Tim</h4>
+                        <ul class=list-unstyled data-turbolinks=false>
+                            <li> <a href="http://blog.creative-tim.com/">Blog</a></li>
+                            <li> <a href="/bootstrap-cheat-sheet">Bootstrap Cheat Sheet</a></li>
+                            <li> <a href="/affiliates/new">Affiliate Program</a></li>
+                            <li> <a href="/terms">Terms &amp; Conditions</a></li>
+                            <li> <a href="/privacy">Privacy Policy</a></li>
+                            <li> <a href="/faq">FAQ</a></li>
+                            <li> <a href="/coupon">Get coupon</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <h4>Proud of</h4>
+                        <ul class="list-unstyled social-list">
+                            <li>
+                                <h4 class=numbers-dont-lie><b>677,840</b> accounts</h4>
+                            </li>
+                            <li>
+                                <h4 class=numbers-dont-lie><b>1,214,845</b> downloads</h4>
+                            </li>
+                            <li>
+                                <h4 class=numbers-dont-lie><b>124</b> sponsored events</h4>
+                            </li>
+                        </ul>
+                        <h4>Tools</h4>
+                        <ul class=list-unstyled data-turbolinks=false>
+                            <li><a href="/tools">Third-Party Tools</a></li>
+                            <li><a href="/ira-design">Illustrations</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <h4>Help and Support</h4>
+                        <ul class=list-unstyled data-turbolinks=false>
+                            <li><a href="/presentation">Presentation</a></li>
+                            <li><a href="/about-us">About Us</a></li>
+                            <li><a href="/contact-us">Contact Us</a></li>
+                            <li><a href="/sponsorships">Sponsorships</a></li>
+                            <li><a href="/license">Licenses</a></li>
+                            <li><a href="/support-terms">Premium Support</a></li>
+                            <li><a href="/gallery/get-shit-done-pro">Products Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-xs-12 text-center">
+                        <h4>Latest News</h4> <a class=twitter-timeline href="https://twitter.com/CreativeTim" data-theme=dark data-widget-id=586445781978124289 data-chrome="noheader nofooter noborders noscrollbar transparent" height=200> Tweets by @CreativeTim</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset=utf-8></script>
+                    </div>
+                </div>
+                <hr>
+                <div class=row>
+                    <div class="social-area text-center" itemscope itemtype="http://schema.org/LocalBusiness">
+                        <a itemprop=url href="https://www.creative-tim.com/" class=footer-brand>
+                            <div class=logo> <img itemprop=logo src="https://s3.amazonaws.com/creativetim_bucket/new_logo.png" /> </div> <span itemprop=name>Creative Tim</span> </a> <br/> <a itemprop=sameAs href="https://dribbble.com/creativetim" class="btn btn-default btn-social btn-round"
+                            rel=publisher target=_blank><i class="fa fa-dribbble"></i></a> <a itemprop=sameAs href="https://www.facebook.com/CreativeTim" class="btn btn-default btn-social btn-round" target=_blank><i class="fa fa-facebook-square"></i></a>                        <a itemprop=sameAs href="https://twitter.com/CreativeTim" class="btn btn-default btn-social btn-round" target=_blank><i class="fa fa-twitter"></i></a> <a itemprop=sameAs href="https://plus.google.com/+CreativetimPage" class="btn btn-default btn-social btn-round"
+                            target=_blank><i class="fa fa-google-plus-square"></i></a> <a itemprop=sameAs href="https://www.instagram.com/creativetimofficial/" class="btn btn-default btn-social btn-round" target=_blank><i class="fa fa-instagram"></i></a>                        <a itemprop=sameAs href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" class="btn btn-default btn-social btn-round" target=_blank><i class="fa fa-youtube"></i></a> <a itemprop=sameAs href="https://ro.pinterest.com/thecreativetim/"
+                            class="btn btn-default btn-social btn-round" target=_blank><i class="fa fa-pinterest"></i></a> </div>
+                </div>
+                <div class=row>
+                    <div class=credits> &copy; 2019 Creative Tim, all rights reserved. Made with <i class="icon-heart heart" alt=love></i> for a better web. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
