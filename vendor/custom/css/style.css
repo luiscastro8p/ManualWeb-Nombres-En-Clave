@@ -4,7 +4,7 @@ body {
 
 /* line 6, style.scss */
 .navbar {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: transparent !important;
   color: black;
   height: 69px; }
   /* line 10, style.scss */
@@ -146,9 +146,18 @@ body {
       background-size: cover;
       background-repeat: no-repeat; }
       /* line 139, style.scss */
-      .carousel .carousel-inner .item-1 p {
-        font-weight: 600; }
-    /* line 143, style.scss */
+      .carousel .carousel-inner .item-1 b {
+        font-size: 25px;
+        cursor: pointer; }
+      /* line 143, style.scss */
+      .carousel .carousel-inner .item-1 .imagen-1 {
+        cursor: pointer !important;
+        height: 300px;
+        width: 500px; }
+      /* line 148, style.scss */
+      .carousel .carousel-inner .item-1 .badge {
+        z-index: 100%; }
+    /* line 152, style.scss */
     .carousel .carousel-inner .item-2 {
       padding-top: 190px;
       background: url(../img/fondoenviarpistas.png);
@@ -156,10 +165,10 @@ body {
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat; }
-      /* line 150, style.scss */
+      /* line 159, style.scss */
       .carousel .carousel-inner .item-2 p {
         font-weight: 500; }
-    /* line 154, style.scss */
+    /* line 163, style.scss */
     .carousel .carousel-inner .item-3 {
       padding-top: 190px;
       background: url(../img/fondocontactar.png);
@@ -167,10 +176,10 @@ body {
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat; }
-      /* line 161, style.scss */
+      /* line 170, style.scss */
       .carousel .carousel-inner .item-3 p {
         font-weight: 500; }
-    /* line 165, style.scss */
+    /* line 174, style.scss */
     .carousel .carousel-inner .item-4 {
       padding-top: 160px;
       background: url(../img/fondomovimiento.png);
@@ -178,14 +187,14 @@ body {
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat; }
-      /* line 172, style.scss */
+      /* line 181, style.scss */
       .carousel .carousel-inner .item-4 h1 {
         text-align: center;
         font-weight: 600; }
-      /* line 176, style.scss */
+      /* line 185, style.scss */
       .carousel .carousel-inner .item-4 p {
         text-align: justify; }
-    /* line 180, style.scss */
+    /* line 189, style.scss */
     .carousel .carousel-inner .item-5 {
       padding-top: 190px;
       background: url(../img/fondovictorias.png);
@@ -193,19 +202,19 @@ body {
       width: 100%;
       background-size: cover;
       background-repeat: no-repeat; }
-      /* line 187, style.scss */
+      /* line 196, style.scss */
       .carousel .carousel-inner .item-5 h1 {
         text-align: center;
         font-weight: 600; }
-  /* line 194, style.scss */
+  /* line 203, style.scss */
   .carousel .carousel-indicators {
     margin-left: 10% !important;
     margin-right: 10% !important;
     top: 45px; }
-    /* line 198, style.scss */
+    /* line 207, style.scss */
     .carousel .carousel-indicators li.active {
       opacity: 1 !important; }
-    /* line 201, style.scss */
+    /* line 210, style.scss */
     .carousel .carousel-indicators .items-1 {
       margin-top: 6px;
       background: url(../img/palabraTurno.png);
@@ -214,7 +223,7 @@ body {
       height: 44px !important;
       width: 201px !important;
       opacity: 0.5; }
-    /* line 210, style.scss */
+    /* line 219, style.scss */
     .carousel .carousel-indicators .items-2 {
       background: url(../img/palabraEnviar.png);
       background-size: cover;
@@ -223,7 +232,7 @@ body {
       width: 349px !important;
       margin-top: -8px;
       opacity: .5; }
-    /* line 219, style.scss */
+    /* line 228, style.scss */
     .carousel .carousel-indicators .items-3 {
       background: url(../img/contactar.png);
       background-size: cover;
@@ -232,7 +241,7 @@ body {
       width: 336px !important;
       margin-top: 4px;
       opacity: .5; }
-    /* line 228, style.scss */
+    /* line 237, style.scss */
     .carousel .carousel-indicators .items-4 {
       background: url(../img/movimientos.png);
       background-size: cover;
@@ -241,7 +250,7 @@ body {
       width: 391px !important;
       margin-top: 2px;
       opacity: .5; }
-    /* line 237, style.scss */
+    /* line 246, style.scss */
     .carousel .carousel-indicators .items-5 {
       background: url(../img/palabravictoria.png);
       background-size: cover;
@@ -251,6 +260,101 @@ body {
       margin-top: 8px;
       opacity: .5; }
 
-/* line 249, style.scss */
-footer {
+/* line 258, style.scss */
+.footer {
   color: white; }
+  /* line 260, style.scss */
+  .footer .img-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
+@media (max-width: 1060px) {
+  /* line 269, style.scss */
+  .txt-prueba h1 {
+    font-size: 46px; } }
+@media (max-width: 813px) {
+  /* line 277, style.scss */
+  .txt-prueba h1 {
+    font-size: 36px; } }
+@media (max-width: 767px) {
+  /* line 284, style.scss */
+  .txt-info {
+    padding-top: 22px;
+    padding-top: 60px; }
+    /* line 287, style.scss */
+    .txt-info iframe {
+      display: none; }
+
+  /* line 292, style.scss */
+  .txt-prueba p {
+    text-align: justify; } }
+@media (max-width: 500px) {
+  /* line 299, style.scss */
+  .txt-prueba {
+    padding-top: 7px; } }
+@media (max-width: 491px) {
+  /* line 306, style.scss */
+  .txt-prueba h1 {
+    font-size: 40px; } }
+@media (max-width: 478px) {
+  /* line 314, style.scss */
+  .header .img-header {
+    height: 183px;
+    width: 342px; } }
+@media (max-width: 430px) {
+  /* line 323, style.scss */
+  .header h1 {
+    font-size: 43px; }
+  /* line 326, style.scss */
+  .header h2 {
+    font-size: 26px; } }
+@media (max-width: 430px) {
+  /* line 334, style.scss */
+  .header .img-header {
+    height: 171px;
+    width: 281px; } }
+@media (max-width: 411px) {
+  /* line 343, style.scss */
+  .txt-prueba h1 {
+    font-size: 23px; } }
+@media (max-width: 575px) {
+  /* line 350, style.scss */
+  .p-5 {
+    padding: 0rem !important; } }
+@media (max-width: 500px) {
+  /* line 356, style.scss */
+  .txt-prueba {
+    padding-bottom: 4px; } }
+@media (max-width: 491px) {
+  /* line 363, style.scss */
+  .txt-prueba h1 {
+    font-size: 39px; } }
+@media (max-width: 330px) {
+  /* line 370, style.scss */
+  .txt-info {
+    padding-top: 22px; }
+    /* line 372, style.scss */
+    .txt-info h1 {
+      font-size: 41px; }
+
+  /* line 376, style.scss */
+  .txt-prueba {
+    padding-top: 6px;
+    height: 417px; }
+    /* line 379, style.scss */
+    .txt-prueba h1 {
+      font-size: 30px; }
+    /* line 382, style.scss */
+    .txt-prueba p {
+      margin-bottom: 5px; }
+
+  /* line 386, style.scss */
+  .p-5 {
+    padding: 0rem !important; } }

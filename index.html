@@ -9,6 +9,8 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="../Nombres en clave web/vendor/custom/img/logonew.png" />
 
+
+    <title>Nombres en Clave</title>
     <script src="vendor/custom/js/smooth-scroll.min.js"></script>
     <script>
         smoothScroll.init({
@@ -19,8 +21,6 @@
             callback: function(anchor, toggle) {}
         });
     </script>
-    <title>Nombres en Clave</title>
-
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/custom/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="vendor/custom/js/arriba.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="83">
@@ -81,7 +81,7 @@
 
 
     <!-- INFORMACION -->
-    <section class="txt-info pt-5 pb-5" id="informacion">
+    <section class="txt-info  pb-5" id="informacion">
         <h1 class="t-light text-center wow zoomIn " data-wow-duration="2s">Nombres En Clave</h1>
         <div class="container wow fadeIn" data-wow-duration="2s">
             <p class="text-center">¡Nombres en Clave, un juego que despertará tu mente y te convertirá en un super espía ¡</p>
@@ -91,12 +91,12 @@
                 el equipo contrario lo haga con su red.</p>
             <p class="text-center"><b>¡Advertencia con sus movimientos en el tablero!, existe un asesino mortal, de tal forma que si es detectado tu red espía se condenará y habrán perdido la batalla.</b></p>
         </div>
-        <center><iframe width="560" height="315" src="https://www.youtube.com/embed/CrFJXw5SIbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+        <center><iframe width="560" height="315" src="https://www.youtube.com/embed/CrFJXw5SIbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe></center>
     </section>
     <!-- INICIA EL RETO Y PON A PRUEBA TU MENTE -->
-    <section class="txt-prueba" id="partida">
+    <section class="txt-prueba lg-12 md-12 sm-12" id="partida">
         <h1 class="t-light text-center wow zoomIn " data-wow-duration="2s">Inicia el reto y pon a prueba tu mente</h1>
-        <div class="container wow fadeIn" data-wow-duration="2s">
+        <div class="container lg-12 md-12 sm-12 wow fadeIn" data-wow-duration="2s">
             <p>Para iniciar una partida en Nombres en Clave, invita a tus amigos a que reten su mente, deberás jugar con un equipo ya sea creando o uniéndote a una sala, de los integrantes de la sala se crearán dos redes de espías una red identificada con
                 el color rojo y la otra azul, ambas son contrarías y la batalla está entre esas redes.
             </p>
@@ -141,7 +141,7 @@
                         <div class="p-5">
                             <h2 class="display-4 text-center wow fadeInRight" data-wow-duration="2s">Espía operario</h2>
                             <p class="text-justify ">Tendrá un tablero con los nombres en clave de los agentes, a diferencia del maestro espía, este rol no sabe la posición de los agentes, por lo que su función será la de adivinar donde se encuentran los agentes secretos del
-                                equipo al que perteneces, una vez recibida la pista y número que nos ha enviado el maestro espía.</p>
+                                equipo al que pertenece, una vez recibida la pista y número que ha enviado el maestro espía.</p>
                         </div>
                     </div>
                 </div>
@@ -155,24 +155,37 @@
     <!--CAROUSEL-->
     <section id="reglas">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators wow bounceIn" data-wow-duration="2s">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="items-1 active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="items-2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2" class="items-3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3" class="items-4"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4" class="items-5"></li>
-            </ol>
+            <div class="container">
+                <ol class="carousel-indicators wow bounceIn" data-wow-duration="2s">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="items-1 active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="items-2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="items-3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3" class="items-4"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4" class="items-5"></li>
+                </ol>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active wow fadeIn" data-wow-duration="3s">
                     <!--TURNOS-->
                     <div class="item-1">
                         <div class="container">
                             <div class="row ">
-                                <p style="font-size:25px;">Los turnos para los equipos estarán dados aleatoriamente, una red espía tendrá a 9 agentes en el tablero y la otra red solamente a 8, la red de espía con mayor número de agentes en el tablero es quien inicia el juego.
+                                <p style="font-size:25px; text-align: center;">Los turnos para los equipos estarán dados aleatoriamente, la red con mayor número de agentes en el tablero será quien inicie la partida.
                                 </p>
-                                <p style="font-size:25px;">De tal forma deberá iniciar el maestro espía de la red en turno, enviando número y pista al espía operario del equipo, el operario realiza los movimientos correspondientes en el tablero y en base a eso se determinan puntajes
-                                    y nuevos turnos.
-                                </p>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="vendor/custom/img/tablero1.png" alt="" class="imagen-1 py-4" data-toggle="modal" data-target="#exampleModal"></a>
+                                    </div>
+                                    <div class="col">
+                                        <p style="font-size:20px;" class="pt-5">Una vez que se ha establecido que equipo debe iniciar, el maestro espía de este deberá iniciar con su rol de juego que será
+                                            <a href="#" class="badge petals badge-light">
+                                                Enviar un número y pista
+                                            </a>a su compañero operario.
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -235,11 +248,50 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-5 bg-black ">
-        <div class="container ">
-            <p class="m-0 text-center text-black small ">Copyright &copy; Nombres en clave 2019</p>
+    <footer class="footer py-5 bg-black ">
+        <div class=" text-center">
+            <div class="img-footer d-flex  align-items-center ">
+                <div class="container">
+                    <img src="vendor/custom/img/tomato.png" class="img-fluid ml-1 mb-4" width="50" style="border-radius:50%;">
+                    <img src="vendor/custom/img/hackademy.png" class="img-fluid ml-1 mb-4" width="50">
+                </div>
+            </div>
         </div>
+
+        <p class="m-0 text-center text-black small ">Copyright &copy; Nombres en clave 2019</p>
+
     </footer>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">EQUIPOS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <h5>AZUL</h5>
+                    <p>En este caso se podrá observar que el tablero contiene 9 agentes de la red espía azul, de tal modo será este equipo quien inicie la partida.</p>
+                    <hr>
+                    <h5>ROJO</h5>
+                    <p>Dado que el tablero que el tablero contenga 9 agentes de la red espía rojo, será este equipo quien inicie la partida.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js "></script>
@@ -251,6 +303,9 @@
     <script type="text/javascript " src="//code.jquery.com/jquery-1.11.0.min.js "></script>
     <script>
         new WOW().init();
+        $('.carousel').carousel({
+            interval: false
+        })
     </script>
 </body>
 
